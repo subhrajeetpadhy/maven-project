@@ -8,14 +8,18 @@ import lombok.SneakyThrows;
 
 public class App 
 {
-	@SneakyThrows
-    public static void main( String[] args )
+	public static void main( String[] args )
     {
-    	BufferedReader br  = new BufferedReader(new FileReader(new File("D:/index.html")));
+    	readFile();
+    }
+
+	@SneakyThrows
+	private static void readFile() {
+		BufferedReader br  = new BufferedReader(new FileReader(new File("D:/index.html")));
     	String line = null;
     	while((line =br.readLine())!= null) {
     		System.out.println(line);
     	}
-    }
+	}
 	
 }
